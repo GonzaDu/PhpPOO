@@ -4,7 +4,6 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="#">WebSiteName</a>
           </div>
-          a
           <ul class="nav navbar-nav">
             <li>
               <a href="BuscarCliente.php">Consulta</a>
