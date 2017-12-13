@@ -1,0 +1,17 @@
+
+
+AGREGAR ARCHIVOS
+
+git add --all
+
+
+Commit (CONFIRMAR CAMBIOS)
+
+git commit -am "Esto es un commit"  
+
+
+Push(PARA ARRIBA)
+
+git push
+
+
