@@ -45,7 +45,9 @@
          $consulta->execute();
          $this->id = $conexion->lastInsertId();
       }
+
       $conexion = null;
+      return $consulta;
    }
 
    public static function autenticarUsuario($usuario,$contrasena)
