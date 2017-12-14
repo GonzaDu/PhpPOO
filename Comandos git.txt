@@ -1,5 +1,15 @@
 
 
+PARA ARRANCAR 
+
+git init
+
+CARGAR ARCHIIVOS
+
+git remote add origin https://github.com/GonzaDu/XamarinAndroidConWebService.git
+git push -u origin master
+
+
 AGREGAR ARCHIVOS
 
 git add --all
