@@ -25,7 +25,7 @@
    public function setContrasena($contrasena) {
       $this->contrasena = $contrasena;
    }
-   public function __construct($id,$usuario, $contrasena) {
+   public function __construct($usuario, $contrasena,$id = null) {
       $this->usuario = $usuario;
       $this->contrasena = $contrasena;
       $this->id = $id;
@@ -33,15 +33,15 @@
    public function guardar(){
       $conexion = new Conexion();
       if($this->id) /*Modifica*/ {
-         $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET nombre = :nombre, descripcion = :descripcion WHERE id = :id');
+         $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET nombre = :nombre, contrasena = :contrasena WHERE id = :id');
          $consulta->bindParam(':nombre', $this->nombre);
-         $consulta->bindParam(':descripcion', $this->descripcion);
+         $consulta->bindParam(':contrasena', $this->contrasena);
          $consulta->bindParam(':id', $this->id);
          $consulta->execute();
       }else /*Inserta*/ {
-         $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, descripcion) VALUES(:nombre, :descripcion)');
+         $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombre, contrasena) VALUES(:nombre, :contrasena)');
          $consulta->bindParam(':nombre', $this->nombre);
-         $consulta->bindParam(':descripcion', $this->descripcion);
+         $consulta->bindParam(':contrasena', $this->contrasena);
          $consulta->execute();
          $this->id = $conexion->lastInsertId();
       }
