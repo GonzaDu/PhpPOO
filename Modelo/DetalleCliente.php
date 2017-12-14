@@ -1,6 +1,6 @@
 <?php
-  //require_once $_SERVER['DOCUMENT_ROOT'].'/Config/conexion.php';
-  require_once 'Config/conexion.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/Config/conexion.php';
+  //require_once 'Config/conexion.php';
 
  class DetalleCliente {
      

@@ -1,10 +1,10 @@
 <?php
 
-/*class Conexion extends PDO { 
+class Conexion extends PDO { 
 	private $tipo_de_base = 'mysql';
 	private $host = 'localhost';
-	private $nombre_de_base = 'id2582879_usuario';
-	private $usuario = 'id2582879_gonza';
+	private $nombre_de_base = 'id3998665_gonzapruebas';
+	private $usuario = 'id3998665_gonzapruebas';
 	private $contrasena = 'tricolores23'; 
 	public function __construct() {
 	   //Sobreescribo el método constructor de la clase PDO.
@@ -15,9 +15,9 @@
 		  exit;
 	   }
 	} 
-	}*/ 
+	}
 	
-	class Conexion extends PDO { 
+	/*class Conexion extends PDO { 
 		private $tipo_de_base = 'mysql';
 		private $host = 'localhost';
 		private $nombre_de_base = 'pruebas';
@@ -32,7 +32,7 @@
 				exit;
 			 }
 		} 
-		} 
+		}*/ 
 
 
     ?>
