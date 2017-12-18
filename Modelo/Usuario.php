@@ -20,7 +20,7 @@
       return $this->contrasena;
    }
    public function setUsuario($usuario) {
-      $this->nombre = $nombre;
+      $this->usuario = $usuario;
    }
    public function setContrasena($contrasena) {
       $this->contrasena = $contrasena;
@@ -45,9 +45,21 @@
          $consulta->execute();
          $this->id = $conexion->lastInsertId();
       }
-
       $conexion = null;
       return $consulta;
+   }
+
+   public static function insertarUsuario($usuario,$contrasena)
+   {
+    $conexion = new Conexion();
+    $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (usuario, contrasena) VALUES(:nombre, :contrasena)');
+    $consulta->bindParam(':nombre', $usuario);
+    $consulta->bindParam(':contrasena', $contrasena);
+    
+    if($consulta->execute())
+        return true;
+    else
+        return false;
    }
 
    public static function autenticarUsuario($usuario,$contrasena)

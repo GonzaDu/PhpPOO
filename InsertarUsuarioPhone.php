@@ -1,14 +1,28 @@
 <?php
 
- if( $_POST )
- {
- require_once 'Modelo/Cliente.php';
+header("Access-Control-Allow-Origin: *");
 
- $nombre = $_POST["txtNombre"];
- $contrasena = $_POST["txtContrasena"];
+ require_once 'Modelo/Usuario.php';
 
+ $nombre = $_POST['usuario'];
+ $contrasena = $_POST['contrasena'];
+/*
 $usuario = new Usuario($nombre,$contrasena);
 $seGuardo = $usuario->guardar();
-echo ($seGuardo);
- }
+//echo((string)$seGuardo);
+*/
+
+$seGuardo = Usuario::insertarUsuario($nombre,$contrasena);
+
+if($seGuardo)
+{
+    echo("success");
+    
+}
+else
+{
+    echo("error");    
+    
+}
+
 ?>
